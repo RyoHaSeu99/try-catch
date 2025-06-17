@@ -1,18 +1,21 @@
+
+
+class Util {
+    public static void sayHello(String name) {
+        System.out.println("Hello, " + name);
+    }
+}
+
+@FunctionalInterface
+interface A {
+    public void say(String name);
+}
+
 public class Main {
     public static void main(String[] args) {
-        int a = 10;
-        int b = 0;
+        A a = (String name) -> Util.sayHello(name);
 
-        try {
-            int result = a / b;
-            System.out.println("Result: " + result);
-        } catch(ArithmeticException e) {
-//            System.out.println(e);
-            e.printStackTrace();
-            System.out.println("Error: Division by zero");
-
-        }
-
+        a.say("RyoHaSeu");
 
 
     }
