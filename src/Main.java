@@ -1,22 +1,12 @@
-
-
-class Util {
-    public static void sayHello(String name) {
-        System.out.println("Hello, " + name);
-    }
-}
-
-@FunctionalInterface
-interface A {
-    public void say(String name);
-}
-
 public class Main {
     public static void main(String[] args) {
-        A a = (String name) -> Util.sayHello(name);
+        String input = "123a";
 
-        a.say("RyoHaSeu");
-
+        try {
+            int number = Integer.parseInt(input);
+        } catch(NumberFormatException e) {
+            System.out.println("숫자 포맷이 아닙니다");
+        }
 
     }
 }
